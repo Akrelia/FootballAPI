@@ -71,8 +71,7 @@ namespace FootballAPI.Services
 
             ReadHeaders(response);
 
-            var args = new LogEventArgs(response.StatusCode.ToString(), error.Message);
-            OnLog(args);
+            CreateLog(response.StatusCode.ToString(), error.Message);
 
             return data;
         }
