@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("FootballAPI")]
+[assembly: AssemblyTitle("FootballAPIExample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FootballAPI")]
+[assembly: AssemblyProduct("FootballAPIExample")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("54a933f2-bf60-46a7-bd0c-f4efe099f7ba")]
+[assembly: Guid("490ecd2e-c3b6-4dc7-aeb6-551c4e2afd7f")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
