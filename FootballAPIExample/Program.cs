@@ -18,7 +18,7 @@ namespace FootballAPIExample
         static void Main(string[] args)
         {
             // Create the service first, using your token
-            FootballService service = new FootballService("7a0b8ee50bef48b9bef8d7f791d73f45");
+            FootballService service = new FootballService("your-api-token-here"); // To get a token, register here : https://www.football-data.org/client/register
 
             // Subscribe to the Log event - Note that you need to subscribe only if you more informations about the requests
             service.Log += ServiceLog;
