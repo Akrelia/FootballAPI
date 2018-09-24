@@ -21,7 +21,7 @@ namespace FootballAPI.Services
             foreach (Competition competition in competitions)
             {
                 builder.Append(delimiter);
-                builder.Append(competition.Code);
+                builder.Append(competition.Id);
                 delimiter = ",";
             }
 

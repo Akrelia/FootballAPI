@@ -198,7 +198,7 @@ namespace FootballAPI.Services
         /// <param name="dateFrom">Date from.</param>
         /// <param name="dateTo">Date to.</param>
         /// <returns>List of matches.</returns>
-        public MatchRequest GetMatches(string competition, Status status, DateTime dateFrom, DateTime dateTo)
+        public MatchRequest GetMatches(int competition, Status status, DateTime dateFrom, DateTime dateTo)
         {
             string from = String.Format(DateFormat, dateFrom);
             string to = String.Format(DateFormat, dateTo);
