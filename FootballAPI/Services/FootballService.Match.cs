@@ -191,13 +191,30 @@ namespace FootballAPI.Services
         }
 
         /// <summary>
-        /// Get matches.
+        /// Get matches with all filters.
         /// </summary>
-        /// <param name="competitions"></param>
-        /// <param name="status"></param>
-        /// <param name="dateFrom"></param>
-        /// <param name="dateTo"></param>
-        /// <returns></returns>
+        /// <param name="competitions">List of competitions.</param>
+        /// <param name="status">Match status.</param>
+        /// <param name="dateFrom">Date from.</param>
+        /// <param name="dateTo">Date to.</param>
+        /// <returns>List of matches.</returns>
+        public MatchRequest GetMatches(string competition, Status status, DateTime dateFrom, DateTime dateTo)
+        {
+            string from = String.Format(DateFormat, dateFrom);
+            string to = String.Format(DateFormat, dateTo);
+            string url = $"http://api.football-data.org/v2/matches?competitions={competition},&status={status}&dateFrom={from}&dateTo={to}";
+
+            return ExecuteRequest<MatchRequest>(url);
+        }
+
+        /// <summary>
+        /// Get matches with all filters.
+        /// </summary>
+        /// <param name="competitions">List of competitions.</param>
+        /// <param name="status">Match status.</param>
+        /// <param name="dateFrom">Date from.</param>
+        /// <param name="dateTo">Date to.</param>
+        /// <returns>List of matches.</returns>
         public MatchRequest GetMatches(Competition[] competitions, Status status, DateTime dateFrom, DateTime dateTo)
         {
             string filter = BuildCompetitionFilter(competitions);
