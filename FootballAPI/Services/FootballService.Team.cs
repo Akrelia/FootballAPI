@@ -36,6 +36,18 @@ namespace FootballAPI.Services
         /// Get all teams of a specific competition.
         /// </summary>
         /// <param name="competition">Id of the competition.</param>
+        /// <returns>List of the teams of the specific competition.</returns>
+        public TeamRequest GetTeams(string competition)
+        {
+            string url = $"http://api.football-data.org/v2/competitions/{competition}/teams";
+
+            return ExecuteRequest<TeamRequest>(url);
+        }
+
+        /// <summary>
+        /// Get all teams of a specific competition.
+        /// </summary>
+        /// <param name="competition">Id of the competition.</param>
         /// <param name="year">Year of the competition.</param>
         /// <returns>List of the teams of the specific competition.</returns>
         public TeamRequest GetTeams(int competition, int year)
