@@ -15,6 +15,7 @@ namespace FootballAPI.Models
         public short? Matchday { get; set; }
         public DateTime? LastUpdated { get; set; }
         public DateTime? UTCDate { get; set; }
+        public Status? Status { get; set; }
         public Stage Stage { get; set; }
         public Season Season { get; set; }
         public Competition Competition { get; set; }
