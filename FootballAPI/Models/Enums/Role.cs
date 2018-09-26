@@ -9,6 +9,7 @@ namespace FootballAPI.Models.Enums
     [JsonConverter(typeof(StringEnumConverter))]
     public enum Role
     {
-        PLAYER
+        PLAYER,
+        COACH
     }
 }

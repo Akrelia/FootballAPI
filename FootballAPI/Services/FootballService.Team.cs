@@ -1,4 +1,5 @@
-﻿using FootballAPI.Models.Enums;
+﻿using FootballAPI.Models;
+using FootballAPI.Models.Enums;
 using FootballAPI.Models.Requests;
 
 namespace FootballAPI.Services
@@ -13,11 +14,11 @@ namespace FootballAPI.Services
         /// </summary>
         /// <param name="id">Id of the team.</param>
         /// <returns>Team.</returns>
-        public TeamRequest GetTeam(int id)
+        public Team GetTeam(int id)
         {
             string url = $"http://api.football-data.org/v2/teams/{id}";
 
-            return ExecuteRequest<TeamRequest>(url);
+            return ExecuteData<Team>(url);
         }
 
         /// <summary>
