@@ -10,6 +10,8 @@ namespace FootballAPI.Models.Enums
     public enum Role
     {
         PLAYER,
-        COACH
+        COACH,
+        ASSISTANT_COACH,
+        INTERIM_COACH
     }
 }
