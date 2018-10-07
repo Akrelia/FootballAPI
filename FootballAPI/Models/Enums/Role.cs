@@ -12,6 +12,7 @@ namespace FootballAPI.Models.Enums
         PLAYER,
         COACH,
         ASSISTANT_COACH,
-        INTERIM_COACH
+        INTERIM_COACH,
+        GOALKEEPER_COACH
     }
 }
