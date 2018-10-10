@@ -9,7 +9,7 @@ namespace FootballAPI.Utils
     /// <summary>
     /// Tools for the Football API.
     /// </summary>
-    static public class Tools
+    static internal class Tools
     {
         /// <summary>
         /// Check if the token is a valid one.
