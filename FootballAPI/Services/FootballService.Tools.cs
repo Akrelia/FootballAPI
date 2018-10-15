@@ -33,12 +33,12 @@ namespace FootballAPI.Services
         /// </summary>
         /// <param name="competitions">Array of competitions code to use as a filter.</param>
         /// <returns>String built.</returns>
-        private string BuildCompetitionFilter(string[] competitions)
+        private string BuildCompetitionFilter(int[] competitions)
         {
             StringBuilder builder = new StringBuilder();
             string delimiter = "";
 
-            foreach (string competition in competitions)
+            foreach (int competition in competitions)
             {
                 builder.Append(delimiter);
                 builder.Append(competition);

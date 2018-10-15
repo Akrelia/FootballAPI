@@ -214,7 +214,7 @@ namespace FootballAPI.Services
         /// <param name="dateFrom">Date from.</param>
         /// <param name="dateTo">Date to.</param>
         /// <returns>List of matches.</returns>
-        public MatchRequest GetMatches(string[] competitions, DateTime dateFrom, DateTime dateTo)
+        public MatchRequest GetMatches(int[] competitions, DateTime dateFrom, DateTime dateTo)
         {
             string filter = BuildCompetitionFilter(competitions);
             string from = String.Format(DateFormat, dateFrom);
@@ -233,7 +233,7 @@ namespace FootballAPI.Services
         /// <param name="dateFrom">Date from.</param>
         /// <param name="dateTo">Date to.</param>
         /// <returns>List of matches.</returns>
-        public MatchRequest GetMatches(string[] competitions, Status status, DateTime dateFrom, DateTime dateTo)
+        public MatchRequest GetMatches(int[] competitions, Status status, DateTime dateFrom, DateTime dateTo)
         {
             string filter = BuildCompetitionFilter(competitions);
             string from = String.Format(DateFormat, dateFrom);

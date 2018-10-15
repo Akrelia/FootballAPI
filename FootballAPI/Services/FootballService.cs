@@ -35,24 +35,38 @@ namespace FootballAPI.Services
         /// <typeparam name="TRequest">Type of the request.</typeparam>
         /// <param name="url">Url to query.</param>
         /// <returns>Request.</returns>
-        public TRequest ExecuteRequest<TRequest>(string url) where TRequest : Request
+        public TRequest ExecuteRequest<TRequest>(string url) where TRequest : Request, new()
         {
+
             var response = client.GetAsync(new Uri(url)).Result;
 
             string responseString = response.Content.ReadAsStringAsync().Result;
 
-            var error = JsonConvert.DeserializeObject<ErrorResult>(responseString);
-            var request = JsonConvert.DeserializeObject<TRequest>(responseString);
+            try
+            {
+                var error = JsonConvert.DeserializeObject<ErrorResult>(responseString);
+                var request = JsonConvert.DeserializeObject<TRequest>(responseString);
 
-            ReadHeaders(response);
+                ReadHeaders(response);
 
-            request.Message = error.Message;
+                request.Message = error.Message;
 
-            CreateLog(response.StatusCode.ToString(), error.Message);
+                CreateLog(response.StatusCode.ToString(), error.Message);
 
-            return request;
+                return request;
+            }
+
+            catch (Exception ex)
+            {
+                TRequest request = new TRequest();
+
+                request.Message = ex.Message;
+
+                CreateLog("Exception Error", "Response : " + responseString);
+
+                return request;
+            }
         }
-
 
         /// <summary>
         /// Execute a request to get a data only object.
