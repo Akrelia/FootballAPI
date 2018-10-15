@@ -211,6 +211,24 @@ namespace FootballAPI.Services
         /// Get matches with all filters.
         /// </summary>
         /// <param name="competitions">List of competitions.</param>
+        /// <param name="dateFrom">Date from.</param>
+        /// <param name="dateTo">Date to.</param>
+        /// <returns>List of matches.</returns>
+        public MatchRequest GetMatches(string[] competitions, DateTime dateFrom, DateTime dateTo)
+        {
+            string filter = BuildCompetitionFilter(competitions);
+            string from = String.Format(DateFormat, dateFrom);
+            string to = String.Format(DateFormat, dateTo);
+
+            string url = $"http://api.football-data.org/v2/matches?competitions={filter}&dateFrom={from}&dateTo={to}";
+
+            return ExecuteRequest<MatchRequest>(url);
+        }
+
+        /// <summary>
+        /// Get matches with all filters.
+        /// </summary>
+        /// <param name="competitions">List of competitions.</param>
         /// <param name="status">Match status.</param>
         /// <param name="dateFrom">Date from.</param>
         /// <param name="dateTo">Date to.</param>
